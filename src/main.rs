@@ -61,4 +61,18 @@ fn main() {
     let rtn: bool = mwr.do_something();
     //let rtn: bool = ms.do_something();
     println!("Do something witt mock server should by false! {}", rtn);
+
+    let rtn: bool = mwr.do_something();
+    //let rtn: bool = ms.do_something();
+    println!(
+        "Call 2 to Do something witt mock server should by false! {}",
+        rtn
+    );
+
+    let rtn: bool = mwr.do_something();
+    //let rtn: bool = ms.do_something();
+    println!(
+        "Call 3 to Do something witt mock server should by false! {}",
+        rtn
+    );
 }
