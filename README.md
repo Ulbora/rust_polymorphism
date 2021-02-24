@@ -1,8 +1,8 @@
-Rust_Polymorphism
+# Rust_Polymorphism
 
 This design allows for dependency injection in Rust.
 
-## Here we are injecting a normal Server object into Wrapper and calling do_something()
+#### Here we are injecting a normal Server object into Wrapper and calling do_something()
 
 ```
 let ms = MyServer {
@@ -14,7 +14,7 @@ let ms = MyServer {
 ```
 
 
-## Here we inject a MockServer object into Wrapper and call do_something()
+#### Here we inject a MockServer object into Wrapper and call do_something()
 
 ```
 let mwr = Wrapper::<MockMyServer>::new(MockMyServer {
