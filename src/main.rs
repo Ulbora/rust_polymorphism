@@ -16,6 +16,19 @@ impl Server for MyServer {
     }
 }
 
+pub struct MockMyServer {
+    pub test: String,
+}
+impl Server for MockMyServer {
+    fn do_something(&self) -> bool {
+        let mut rtn = false;
+        if self.test == "test" {
+            rtn = true;
+        }
+        rtn
+    }
+}
+
 pub struct Wrapper<T> {
     server: T,
 }
@@ -40,4 +53,12 @@ fn main() {
     let rtn: bool = wr.do_something();
     //let rtn: bool = ms.do_something();
     println!("Do something! {}", rtn);
+
+    let mwr = Wrapper::<MockMyServer>::new(MockMyServer {
+        test: String::from("mock test"),
+    });
+
+    let rtn: bool = mwr.do_something();
+    //let rtn: bool = ms.do_something();
+    println!("Do something witt mock server should by false! {}", rtn);
 }
